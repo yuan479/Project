@@ -1,0 +1,33 @@
+.user {
+    background-color: #fff;
+    padding: 30px 20px;
+    display: flex;
+}
+.user_info {
+    padding: 5px 30px;
+}
+.info_name{
+    font-size: 20px;
+    font-weight: 600;
+    padding-bottom: 5px;
+}
+.info_like{
+    display: inline-block;
+    font-size: 12px;
+    color: #999;
+    width: 70px;
+}
+.info_attention{
+    display: inline-block;
+    font-size: 12px;
+    color: #999;
+    width: 70px;
+}
+.info_signature{
+    padding-top: 5px;
+    font-size: 12px;
+    color: #999;
+}
+.grid{
+    padding-top: 20px;
+}
