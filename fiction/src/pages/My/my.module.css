@@ -4,7 +4,8 @@
     display: flex;
 }
 .user_info {
-    padding: 5px 30px;
+    padding: 5px 20px;
+    flex:auto;
 }
 .info_name{
     font-size: 20px;
@@ -15,13 +16,13 @@
     display: inline-block;
     font-size: 12px;
     color: #999;
-    width: 70px;
+    width: 60px;
 }
 .info_attention{
     display: inline-block;
     font-size: 12px;
     color: #999;
-    width: 70px;
+    width: 50%;
 }
 .info_signature{
     padding-top: 5px;

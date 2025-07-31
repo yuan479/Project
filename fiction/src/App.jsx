@@ -2,6 +2,8 @@ import { lazy, Suspense } from 'react'
 import './App.css'
 import { Routes, Route, Navigate } from 'react-router-dom'
 import MainLayout from '@/components/MainLayout'
+import BlankLayout from '@/components/BlankLayout'
+import AI_chat from './pages/AI_chat'
 
 const Home = lazy(() => import('@/pages/Home'))
 const Sort = lazy(() => import('@/pages/Sort'))
@@ -14,14 +16,20 @@ function App() {
     <>
       <Suspense fallback={<div>loading...</div>}>
         <Routes>
+
           <Route element={<MainLayout />}>
             <Route path='/' element={<Navigate to="/home" />} />
             <Route path='/home' element={<Home />} />
-            <Route path='/sort' element={<Sort />} />
             <Route path='/bookstore' element={<BookStore />} />
             <Route path='/bookshelf' element={<BookShelf />} />
             <Route path='/my' element={<My />} />
           </Route>
+
+          <Route path='/ai_chat' element={<AI_chat />} />
+          <Route path='/sort' element={<Sort />} />
+          <Route element={<BlankLayout />} />
+
+
         </Routes>
       </Suspense>
     </>

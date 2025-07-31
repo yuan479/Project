@@ -1,11 +1,10 @@
 import { Outlet, useNavigate, } from "react-router-dom"
-import { Tabbar, } from "react-vant"
+import { Tabbar } from "react-vant"
 import { useState,useEffect } from "react"
 
 
 const tabList = [
   { title: "书城", path: "/home" },
-  { title: "分类", path: "/sort" },
   { title: "书店", path: "/bookstore" },
   { title: "书架", path: "/bookshelf" },
   { title: "我的", path: "/my" },

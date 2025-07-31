@@ -1,0 +1,84 @@
+.ai_chat {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: 100vh;
+    
+
+}
+.header{
+    width: 100%;
+    background-color: #fff;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+
+}
+.chatArea {
+    flex: 1;
+    overflow-y: auto;
+    padding: 12px;
+    
+}
+
+.prechat {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 8px;
+}
+
+.inputArea {
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    border-top: 1px solid #c4c4c4;
+    border-radius: 10px;
+    
+}
+
+.input {
+    flex: 1;
+}
+
+.msgLeft,
+.msgRight {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    max-width: 60%;
+    line-height: 20px;
+    font-size: 12px;
+    border-radius: 5px;
+    margin: 5px 3px;
+    padding: 5px 10px;
+
+
+}
+
+.imgRight {
+    display: inline-block;
+    margin-top: 5px;
+    float: right;
+
+}
+
+.imgLeft {
+    display: inline-block;
+    margin-top: 5px;
+    margin-left: 0;
+}
+
+.msgRight {
+    float: right;
+    text-align: right;
+    background: #40dd32;
+    color: #fff;
+    margin-left: 40%;
+
+}
+
+.msgLeft {
+
+    background: #ececec;
+    margin-left: 10px;
+}
