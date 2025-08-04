@@ -4,12 +4,15 @@ import { Routes, Route, Navigate } from 'react-router-dom'
 import MainLayout from '@/components/MainLayout'
 import BlankLayout from '@/components/BlankLayout'
 import AI_chat from './pages/AI_chat'
+import Search from './pages/Search'
 
 const Home = lazy(() => import('@/pages/Home'))
 const Sort = lazy(() => import('@/pages/Sort'))
 const BookStore = lazy(() => import('@/pages/Bookstore'))
 const BookShelf = lazy(() => import('@/pages/BookShelf'))
 const My = lazy(() => import('@/pages/My'))
+const Detail = lazy(() => import('@/pages/Detail'))
+
 
 function App() {
   return (
@@ -28,7 +31,8 @@ function App() {
           <Route path='/ai_chat' element={<AI_chat />} />
           <Route path='/sort' element={<Sort />} />
           <Route element={<BlankLayout />} />
-
+          <Route path='/search' element={<Search />} />
+          <Route path='/detail/:id' element={<Detail />} />
 
         </Routes>
       </Suspense>

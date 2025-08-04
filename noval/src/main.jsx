@@ -1,13 +1,11 @@
-import { BrowserRouter as Router } from 'react-router-dom'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
 
-// 引入mock数据
-import '../mock/data.js'
-
 createRoot(document.getElementById('root')).render(
-    <Router>
-        <App />
-    </Router>
+  <Router>
+      <App />
+  </Router>
+  
+  
 )

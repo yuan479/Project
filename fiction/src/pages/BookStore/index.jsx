@@ -1,14 +1,16 @@
-import useTitle  from '@/hooks/useTitle'
 
-const BookStore =()=>{
-    useTitle('诸天小说-书店')
-    return(
-        
-        <>
-        这是 BookStore 页面
-        
-        </>
-    )
-}
+import useTitle from '@/hooks/useTitle';
 
-export default BookStore
+
+const BookStore = () => {
+    useTitle('诸天小说-书店');
+ 
+
+    return (
+        <div >
+          
+        </div>
+    );
+};
+
+export default BookStore;
