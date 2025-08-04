@@ -1,0 +1,29 @@
+.header{
+    display: flex;
+    flex: 1;
+}
+
+.AI_ball{
+    position: fixed;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background-color: rgba(255, 128, 0, 0.8);
+    font-weight: bold;
+    text-align: center;
+    line-height: 64px;
+    color: white;
+    right: 20px;
+    bottom: 100px;
+    z-index: 999;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(255, 128, 0, 0.3);
+}
+
+.AI_ball:hover {
+    transform: scale(1.1);
+    background-color: rgba(255, 128, 0, 1);
+    box-shadow: 0 6px 16px rgba(255, 128, 0, 0.4);
+}
+
