@@ -12,135 +12,323 @@
 }
 
 .container {
+    padding: 16px;
+    background: #f5f5f5;
+    min-height: 100vh;
+}
+
+.header {
+    background: white;
+    border-radius: 12px;
     padding: 20px;
-    padding-bottom: 80px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.priveRow {
+.bookInfo {
     display: flex;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.cover {
+    width: 120px;
+    height: 160px;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: center;
-    margin: 20px 0;
 }
 
-.price {
-    font-size: 24px;
+.title {
+    font-size: 20px;
     font-weight: bold;
-    color: #ff4757;
+    color: #333;
+    margin-bottom: 8px;
+    line-height: 1.4;
 }
 
-.couponBtn {
-    background: #ff4757;
-    color: white;
-    padding: 8px 16px;
-    border-radius: 20px;
+.author {
     font-size: 14px;
+    color: #666;
+    margin-bottom: 8px;
 }
 
-.titleRow {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-}
-
-.tag {
-    background: #ff4757;
+.type {
+    display: inline-block;
+    background: #ff6b6b;
     color: white;
     padding: 4px 8px;
     border-radius: 4px;
     font-size: 12px;
-    margin-right: 10px;
+    margin-bottom: 8px;
 }
 
-.title {
+.status {
+    display: inline-block;
+    background: #4ecdc4;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    margin-left: 8px;
+}
+
+.stats {
+    display: flex;
+    gap: 16px;
+    margin-top: 12px;
+}
+
+.stat {
+    text-align: center;
+}
+
+.statNumber {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+.statLabel {
+    font-size: 12px;
+    color: #666;
+    margin-top: 2px;
+}
+
+.actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.btn {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btnPrimary {
+    background: #ff6b6b;
+    color: white;
+}
+
+.btnPrimary:hover {
+    background: #ff5252;
+}
+
+.btnSecondary {
+    background: #f8f9fa;
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+.btnSecondary:hover {
+    background: #e9ecef;
+}
+
+.btnSuccess {
+    background: #28a745;
+    color: white;
+    border: 1px solid #28a745;
+}
+
+.btnSuccess:hover {
+    background: #218838;
+    border-color: #1e7e34;
+}
+
+.section {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sectionTitle {
     font-size: 18px;
     font-weight: bold;
-    flex: 1;
-}
-
-.deliveryRow {
-    background: #f8f9fa;
-    padding: 15px;
-    border-radius: 8px;
-    margin-bottom: 15px;
-}
-
-.icon {
-    color: #666;
-    margin-right: 8px;
-}
-
-.deliveryText {
     color: #333;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.description {
+    line-height: 1.6;
+    color: #666;
     font-size: 14px;
 }
 
-.extraInfo {
-    color: #666;
-    font-size: 12px;
-    margin-top: 5px;
-}
-
-.row {
+.tags {
     display: flex;
-    align-items: center;
-    padding: 10px 0;
-    border-bottom: 1px solid #eee;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
 }
 
-.row:last-child {
+.tag {
+    background: #f0f0f0;
+    color: #666;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.reviewsList {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.review {
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 16px;
+}
+
+.review:last-child {
     border-bottom: none;
 }
 
-.row span {
-    color: #666;
+.reviewHeader {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.reviewInfo {
+    flex: 1;
+}
+
+.reviewUser {
     font-size: 14px;
+    font-weight: bold;
+    color: #333;
 }
 
-.bottomBar {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    border-top: 1px solid #eee;
-    z-index: 100;
-}
-
-.left {
-    display: flex;
-    gap: 20px;
-}
-
-.iconBlock {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.reviewTime {
     font-size: 12px;
+    color: #999;
+    margin-top: 2px;
+}
+
+.reviewRating {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.star {
+    color: #ffd700;
+    font-size: 14px;
+}
+
+.reviewContent {
+    color: #666;
+    line-height: 1.5;
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+.reviewActions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 8px;
+}
+
+.reviewAction {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: #999;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.reviewAction:hover {
     color: #666;
 }
 
-.right {
+/* 阅读按钮样式 */
+.readActions {
     display: flex;
-    gap: 10px;
+    gap: 12px;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #f0f0f0;
 }
 
-.cartBtn {
-    background: #ffa502;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 20px;
+.readBtn {
+    flex: 1;
+    padding: 12px 16px;
+    border: none;
+    border-radius: 8px;
     font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
 }
 
-.buyBtn {
-    background: #ff4757;
+.readBtnPrimary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
-    padding: 10px 20px;
-    border-radius: 20px;
-    font-size: 14px;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.readBtnPrimary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(102, 126, 234, 0.4);
+}
+
+.readBtnSecondary {
+    background: #f8f9fa;
+    color: #333;
+    border: 2px solid #e9ecef;
+}
+
+.readBtnSecondary:hover {
+    background: #e9ecef;
+    border-color: #dee2e6;
+    transform: translateY(-2px);
+}
+
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    color: #666;
+}
+
+.error {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    color: #ff6b6b;
 } 

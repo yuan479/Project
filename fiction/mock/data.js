@@ -131,21 +131,29 @@ export default [{
     url: '/api/detail/:id',
     method: 'get',
     timeout: 1000,
-    response: ({ params }) => {
-        const id = params.id;
+    response: (req) => {
+        const id = req.params?.id || req.query?.id || '1';
         
         // 生成书籍详情数据
         const detail = Mock.mock({
             id: id,
             title: '@ctitle(5, 15)',
-            desc: '@cparagraph(2, 4)',
-            price: '@float(20, 200, 2, 2)',
             author: '@cname',
+            cover: Mock.Random.image('300x400', Mock.Random.color(), Mock.Random.color(), 'png', '小说封面'),
             type: '@pick(["玄幻", "都市", "历史", "科幻", "仙侠", "游戏", "军事", "悬疑", "言情", "轻小说"])',
             status: '@pick(["连载中", "已完结"])',
+            description: '@cparagraph(3, 6)',
+            summary: '@cparagraph(2, 4)',
             wordCount: '@integer(10000, 500000)',
             rating: '@float(1, 5, 1, 1)',
             readCount: '@integer(10000, 1000000)',
+            likeCount: '@integer(1000, 50000)',
+            followCount: '@integer(500, 20000)',
+            fansCount: '@integer(2000, 100000)',
+            chapters: '@integer(100, 2000)',
+            updateTime: '@datetime("yyyy-MM-dd HH:mm:ss")',
+            publishTime: '@datetime("yyyy-MM-dd")',
+            tags: ['@pick(["热门", "推荐", "新书", "完结"])', '@pick(["玄幻", "都市", "历史"])'],
             images: [
                 {
                     alt: '书籍封面',
@@ -160,10 +168,22 @@ export default [{
                     url: Mock.Random.image('300x400', Mock.Random.color(), Mock.Random.color(), 'png', '小说详情')
                 }
             ],
-            description: '@cparagraph(3, 6)',
-            tags: ['@pick(["热门", "推荐", "新书", "完结"])', '@pick(["玄幻", "都市", "历史"])'],
-            chapters: '@integer(100, 2000)',
-            updateTime: '@datetime("yyyy-MM-dd HH:mm:ss")',
+            reviews: () => {
+                const reviews = [];
+                const count = Mock.Random.integer(5, 15);
+                for (let i = 0; i < count; i++) {
+                    reviews.push(Mock.mock({
+                        id: `review_${i}`,
+                        user: '@cname',
+                        avatar: Mock.Random.image('50x50', Mock.Random.color(), Mock.Random.color(), 'png', '头像'),
+                        content: '@cparagraph(1, 3)',
+                        rating: '@integer(1, 5)',
+                        time: '@datetime("yyyy-MM-dd HH:mm:ss")',
+                        likeCount: '@integer(0, 100)'
+                    }));
+                }
+                return reviews;
+            },
             publisher: '@ctitle(3, 8)',
             isbn: '@string("number", 13)',
             language: '中文',

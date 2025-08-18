@@ -1,0 +1,231 @@
+.container {
+    min-height: 100vh;
+    background: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    background: white;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navBtn {
+    background: none;
+    border: none;
+    padding: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #666;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.navBtn:hover {
+    background: #f0f0f0;
+    color: #333;
+}
+
+.chapterTitle {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+    flex: 1;
+    text-align: center;
+}
+
+.headerActions {
+    display: flex;
+    gap: 8px;
+}
+
+.settingsPanel, .chaptersPanel {
+    background: white;
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.settingsPanel h3, .chaptersPanel h3 {
+    margin: 0 0 16px 0;
+    color: #333;
+    font-size: 16px;
+}
+
+.fontSizeControl {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.fontBtn {
+    background: #f0f0f0;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.fontBtn:hover:not(:disabled) {
+    background: #e0e0e0;
+}
+
+.fontBtn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.fontSize {
+    font-weight: bold;
+    color: #333;
+    min-width: 40px;
+    text-align: center;
+}
+
+.comicTip {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    margin-top: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.chaptersList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 8px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.chapterItem {
+    padding: 8px 12px;
+    background: #f8f9fa;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.chapterItem:hover {
+    background: #e9ecef;
+}
+
+.chapterItem.active {
+    background: #667eea;
+    color: white;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+    line-height: 1.8;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+    user-select: text;
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+}
+
+.paragraph {
+    margin-bottom: 16px;
+    text-indent: 2em;
+}
+
+/* 文本选择时的样式 */
+.content::selection {
+    background-color: rgba(102, 126, 234, 0.3);
+}
+
+.content::-moz-selection {
+    background-color: rgba(102, 126, 234, 0.3);
+}
+
+.footer {
+    background: white;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    bottom: 0;
+}
+
+.chapterBtn {
+    background: #667eea;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.chapterBtn:hover:not(:disabled) {
+    background: #5a6fd8;
+    transform: translateY(-1px);
+}
+
+.chapterBtn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.chapterInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+    color: #666;
+}
+
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #666;
+    font-size: 16px;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .content {
+        padding: 16px;
+        font-size: 16px;
+    }
+    
+    .chaptersList {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    }
+    
+    .chapterTitle {
+        font-size: 14px;
+    }
+} 

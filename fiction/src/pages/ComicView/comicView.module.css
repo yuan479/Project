@@ -1,0 +1,207 @@
+.container {
+    min-height: 100vh;
+    background: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    background: white;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.backBtn {
+    background: none;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #666;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.backBtn:hover {
+    background: #f0f0f0;
+    color: #333;
+}
+
+.title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+    flex: 1;
+    text-align: center;
+}
+
+.headerActions {
+    display: flex;
+    gap: 8px;
+}
+
+.actionBtn {
+    background: none;
+    border: none;
+    padding: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #666;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.actionBtn:hover {
+    background: #f0f0f0;
+    color: #333;
+    transform: scale(1.1);
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.comicSection {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+}
+
+.comicImage {
+    max-width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.comicImage img {
+    width: 100%;
+    height: auto;
+    max-width: 500px;
+    display: block;
+}
+
+.infoSection {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.originalText h3 {
+    margin: 0 0 12px 0;
+    color: #333;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.originalText p {
+    margin: 0;
+    color: #666;
+    line-height: 1.6;
+    font-size: 14px;
+    background: #f8f9fa;
+    padding: 16px;
+    border-radius: 8px;
+    border-left: 4px solid #667eea;
+}
+
+.comicInfo {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #e5e7eb;
+}
+
+.infoItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.label {
+    color: #666;
+    font-weight: 500;
+}
+
+.footer {
+    background: white;
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    bottom: 0;
+}
+
+.generateBtn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.generateBtn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 8px -1px rgba(0, 0, 0, 0.15);
+}
+
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #666;
+    font-size: 16px;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .content {
+        padding: 16px;
+    }
+    
+    .comicSection,
+    .infoSection {
+        padding: 16px;
+    }
+    
+    .title {
+        font-size: 14px;
+    }
+    
+    .footer {
+        padding: 12px;
+    }
+    
+    .generateBtn {
+        padding: 10px 20px;
+        font-size: 13px;
+    }
+} 

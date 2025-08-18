@@ -1,0 +1,248 @@
+.container {
+    min-height: 100vh;
+    background: #f8f9fa;
+}
+
+.header {
+    background: white;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.backBtn {
+    background: none;
+    border: none;
+    padding: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #666;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.backBtn:hover {
+    background: #f0f0f0;
+    color: #333;
+}
+
+.title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+}
+
+.headerActions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.chapterCount {
+    font-size: 14px;
+    color: #666;
+    background: #f0f0f0;
+    padding: 4px 8px;
+    border-radius: 12px;
+}
+
+.bookInfo {
+    background: white;
+    padding: 20px;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+}
+
+.bookCover {
+    width: 80px;
+    height: 120px;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.bookDetails {
+    flex: 1;
+}
+
+.bookTitle {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin: 0 0 8px 0;
+}
+
+.bookAuthor {
+    font-size: 14px;
+    color: #666;
+    margin: 0 0 4px 0;
+}
+
+.bookChapters {
+    font-size: 12px;
+    color: #999;
+    margin: 0;
+}
+
+.searchSection {
+    background: white;
+    padding: 16px;
+    border-bottom: 1px solid #eee;
+}
+
+.searchBox {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.searchIcon {
+    position: absolute;
+    left: 12px;
+    color: #999;
+    font-size: 16px;
+}
+
+.searchInput {
+    width: 100%;
+    padding: 12px 12px 12px 40px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.searchInput:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.1);
+}
+
+.chaptersList {
+    background: white;
+}
+
+.chapterItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    border-bottom: 1px solid #f0f0f0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.chapterItem:hover {
+    background: #f8f9fa;
+}
+
+.chapterItem:last-child {
+    border-bottom: none;
+}
+
+.chapterInfo {
+    flex: 1;
+}
+
+.chapterTitle {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin: 0 0 8px 0;
+    line-height: 1.4;
+}
+
+.chapterMeta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 12px;
+    color: #999;
+}
+
+.wordCount {
+    background: #f0f0f0;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.updateTime {
+    color: #999;
+}
+
+.vipTag {
+    background: #ffd700;
+    color: #333;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 10px;
+}
+
+.chapterArrow {
+    color: #ccc;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.chapterItem:hover .chapterArrow {
+    color: #667eea;
+    transform: translateX(4px);
+}
+
+.footer {
+    background: white;
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid #eee;
+}
+
+.footerText {
+    font-size: 14px;
+    color: #999;
+    margin: 0;
+}
+
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #666;
+    font-size: 16px;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .bookInfo {
+        padding: 16px;
+    }
+    
+    .bookCover {
+        width: 60px;
+        height: 90px;
+    }
+    
+    .bookTitle {
+        font-size: 16px;
+    }
+    
+    .chapterItem {
+        padding: 12px 16px;
+    }
+    
+    .chapterTitle {
+        font-size: 14px;
+    }
+} 
