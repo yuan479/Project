@@ -1,4 +1,5 @@
 import Mock from 'mockjs';
+import { getNovelCover, getImagePlaceholder } from '../src/utils/placeholderImages.js';
 
 // 生成图片数据的函数
 const getImages = (page) => {
@@ -8,7 +9,7 @@ const getImages = (page) => {
     for (let i = 0; i < pageSize; i++) {
         const image = Mock.mock({
             id: `image_${page}_${i}`,
-            url: Mock.Random.image('200x300', Mock.Random.color(), Mock.Random.color(), 'png', '小说'),
+            url: getNovelCover(200, 300),
             height: Mock.Random.integer(200, 400)
         });
         images.push(image);
@@ -27,7 +28,7 @@ const getBooks = (page) => {
             id: `book_${page}_${i}`,
             title: '@ctitle(3, 8)',
             author: '@cname',
-            cover: Mock.Random.image('200x300', Mock.Random.color(), Mock.Random.color(), 'png', '小说'),
+            cover: getNovelCover(200, 300),
             type: '@pick(["玄幻", "都市", "历史", "科幻", "仙侠", "游戏", "军事", "悬疑", "言情", "轻小说"])',
             description: '@cparagraph(1, 2)',
             wordCount: '@integer(1000, 50000)',
@@ -139,7 +140,7 @@ export default [{
             id: id,
             title: '@ctitle(5, 15)',
             author: '@cname',
-            cover: Mock.Random.image('300x400', Mock.Random.color(), Mock.Random.color(), 'png', '小说封面'),
+            cover: getNovelCover(300, 400),
             type: '@pick(["玄幻", "都市", "历史", "科幻", "仙侠", "游戏", "军事", "悬疑", "言情", "轻小说"])',
             status: '@pick(["连载中", "已完结"])',
             description: '@cparagraph(3, 6)',
@@ -157,15 +158,15 @@ export default [{
             images: [
                 {
                     alt: '书籍封面',
-                    url: Mock.Random.image('300x400', Mock.Random.color(), Mock.Random.color(), 'png', '小说封面')
+                    url: getNovelCover(300, 400)
                 },
                 {
                     alt: '书籍内页',
-                    url: Mock.Random.image('300x400', Mock.Random.color(), Mock.Random.color(), 'png', '小说内页')
+                    url: getImagePlaceholder(300, 400, '小说内页')
                 },
                 {
                     alt: '书籍详情',
-                    url: Mock.Random.image('300x400', Mock.Random.color(), Mock.Random.color(), 'png', '小说详情')
+                    url: getImagePlaceholder(300, 400, '小说详情')
                 }
             ],
             reviews: () => {
@@ -175,7 +176,7 @@ export default [{
                     reviews.push(Mock.mock({
                         id: `review_${i}`,
                         user: '@cname',
-                        avatar: Mock.Random.image('50x50', Mock.Random.color(), Mock.Random.color(), 'png', '头像'),
+                        avatar: getImagePlaceholder(50, 50, '头像'),
                         content: '@cparagraph(1, 3)',
                         rating: '@integer(1, 5)',
                         time: '@datetime("yyyy-MM-dd HH:mm:ss")',

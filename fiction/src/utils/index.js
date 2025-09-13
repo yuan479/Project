@@ -8,3 +8,6 @@ export function debounce(func, delay) {
         }, delay)
     }
 }
+
+// 导出占位图片工具
+export * from './placeholderImages.js';
