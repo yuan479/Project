@@ -70,6 +70,24 @@
       设计稿设计750px = iphone4 尺寸 = 375pt*2
       layout
 
+*git 提交*
+  1. 项目架构及环境配置
+  2. 移动端适配
+  3. 
+
+*功能模块*
+- UI 组件库
+    react-vant 第三方组件库
+- 路由配置及懒加载
+    - 懒加载
+    - 路由守卫
+    - Layout组件
+      - 嵌套路由 Outlet 分组路由配置
+      - 网页两个模板 包含导航栏和不包含导航栏
+      - Navigate 跳转
+- 自定义hooks
+    - useTitle
+
 *项目亮点*
 - 移动端适配
-    lib-flexible 还原设计稿，但是需要频繁的计算 -> 安装postcss和postcss-pxtorem自动化
+    lib-flexible 还原设计稿，但是需要频繁的计算 -> 安装postcss和postcss-pxtorem实现自动化
