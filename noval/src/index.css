@@ -25,12 +25,17 @@
   }
   
   /* 设置默认字体和抗锯齿 */
+  html {
+    height: 100%;
+  }
+  
   body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
     font-size: 14px;
     line-height: 1.5;
     color: #333;
-    background:linear-gradient(45deg,#fff5f5,#ebf8ff);
+    background: linear-gradient(45deg, #fff5f5, #ebf8ff) !important;
+    min-height: 100vh;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
