@@ -46,18 +46,30 @@
     react-touter-dom
     zustand
     axios
-    react-vant
-    开发期间的依赖
+    react-vant        UI 组件库
+    lib-flexible      解决移动端适配
+- 开发期间的依赖
     jwt
     vite-plugin-mock
+    postcss
+    postcss-pxtorem
 - vite 配置
-    alias
-    mock
-    .env.local
-    llm apiKey
-    user-scalable= no
-    css 预处理
+  - alias
+  - mock
+  - .env.local
+  - llm apiKey
+  - user-scalable= no
+  - css 预处理
       index.css -> 功能
+        font-family:-apply-system
       App.css -> 全局
       module.css -> 模块
-    移动端适配 rem
+  - 移动端适配 rem
+      不能用px -> 用相对单位rem 对html相对计算
+      不同设备上体验要一致 -> 不同尺寸手机等比缩放
+      设计稿设计750px = iphone4 尺寸 = 375pt*2
+      layout
+
+*项目亮点*
+- 移动端适配
+    lib-flexible 还原设计稿，但是需要频繁的计算 -> 安装postcss和postcss-pxtorem自动化
