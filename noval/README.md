@@ -89,12 +89,22 @@
       - react-vant + @react-vant/icons
       - value + onChange 响应式
       - 直接点击链接共享 active的设置
+- chatbot 模块
+    - llm 模块chat封装
+    - 绑死了deepseek，想换其他模型？-> 更改密钥和api,url和model
+    
+
+*项目亮点*
 - 自定义hooks
     - useTitle
 - es6 特性使用
     - arr.findIndex
     - str.startWith
     - promise
+- 大模型接口调用
+    - AskAI -> 调用deepseek chat
+    - 流式输出
+    - coze 工作流
 
 *项目亮点*
 - 移动端适配

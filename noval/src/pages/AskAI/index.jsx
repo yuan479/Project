@@ -1,15 +1,15 @@
 import useTitle from '@/hooks/useTitle'
-import { chat } from '@/llm'
+import { doubao_chat, deepseek_chat, moonshot_chat } from '@/llm'
 import { useEffect } from 'react'
 
 const AskAI = () => {
     useTitle('智言书城 - 问AI')
     useEffect(() => {
         const fetchChat = async () => {
-            const res = await chat([
+            const res = await moonshot_chat([
                 {
                     role:'user',
-                    content:'有什么推荐的悬疑小说'
+                    content:'你是谁'
                 }
             ])
             console.log(res)
