@@ -49,7 +49,7 @@ const chat = async (messages, modelType = 'deepseek') => {
     } catch (error) {
         return {
             code: 0,
-            msg: 'AI回答失败了...(っ °Д °;)っ',
+            msg: '(っ °Д °;)っ，AI好像出错了...',
         }
     }
 }
