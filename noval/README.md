@@ -46,8 +46,8 @@
     react-touter-dom
     zustand
     axios
-    react-vant        UI 组件库
-    lib-flexible      解决移动端适配
+    react-vant react-vant/icon UI 组件库
+    lib-flexible 解决移动端适配
 - 开发期间的依赖
     jwt
     vite-plugin-mock
@@ -85,8 +85,16 @@
       - 嵌套路由 Outlet 分组路由配置
       - 网页两个模板 包含导航栏和不包含导航栏
       - Navigate 跳转
+    - tabbar
+      - react-vant + @react-vant/icons
+      - value + onChange 响应式
+      - 直接点击链接共享 active的设置
 - 自定义hooks
     - useTitle
+- es6 特性使用
+    - arr.findIndex
+    - str.startWith
+    - promise
 
 *项目亮点*
 - 移动端适配
