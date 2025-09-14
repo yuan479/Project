@@ -1,7 +1,7 @@
 import useTitle from '@/hooks/useTitle'
 
 const Search =()=>{
-    useTitle('智言小说 - 搜索')
+    useTitle('智言书城 - 搜索')
     
     return(
         <>

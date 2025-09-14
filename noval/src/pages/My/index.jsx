@@ -1,7 +1,7 @@
 import useTitle from '@/hooks/useTitle'
 
 const My =()=>{
-    useTitle('智言小说 - 我的')
+    useTitle('智言书城 - 我的')
     
     return(
         <>

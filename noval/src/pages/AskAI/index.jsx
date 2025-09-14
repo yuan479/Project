@@ -1,7 +1,7 @@
 import useTitle from '@/hooks/useTitle'
 
 const AskAI =()=>{
-    useTitle('智言小说 - 问AI')
+    useTitle('智言书城 - 问AI')
     
     return(
         <>

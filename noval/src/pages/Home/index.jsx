@@ -1,7 +1,7 @@
 import useTitle from '@/hooks/useTitle'
 
 const Home =()=>{
-    useTitle('智言小说 - 首页')
+    useTitle('智言书城 - 首页')
     
     return(
         <>

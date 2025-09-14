@@ -1,7 +1,7 @@
 import useTitle from '@/hooks/useTitle'
 
 const BookShelf =()=>{
-    useTitle('智言小说 - 书架')
+    useTitle('智言书城 - 书架')
     
     return(
         <>
