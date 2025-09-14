@@ -105,7 +105,10 @@
     - AskAI -> 调用deepseek chat
     - 流式输出
     - coze 工作流
-
-*项目亮点*
 - 移动端适配
     lib-flexible 还原设计稿，但是需要频繁的计算 -> 安装postcss和postcss-pxtorem实现自动化
+- 原子css
+    - App.css 里面写通用样式
+    - 各自模块里有module.css ，不影响别的组件
+    - 一个元素按功能逻辑拆分成多个类
+
