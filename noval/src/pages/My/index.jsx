@@ -1,8 +1,9 @@
 import useTitle from '@/hooks/useTitle'
 import { useState } from 'react'
 import styles from './my.module.css'
-import { Image, Grid, CellGroup, Cell, Card, Space, Divider, Button } from 'react-vant'
-import { ServiceO, FriendsO, StarO, SettingO, UserCircleO, LikeO, EyeO, Edit } from '@react-vant/icons'
+import { Image, Grid, Card, ActionSheet } from 'react-vant'
+import { ServiceO, FriendsO, StarO, SettingO, UserCircleO, LikeO, EyeO } from '@react-vant/icons'
+import { generateAvatar } from '@/llm'
 
 const My = () => {
     useTitle('智言书城 - 我的')
@@ -15,13 +16,36 @@ const My = () => {
         readTime: 120
     })
 
-    const handleEditProfile = () => {
-        console.log('编辑个人资料')
-    }
-
     const handleMenuClick = (menu) => {
         console.log('点击菜单:', menu)
     }
+    const [showActionSheet, setShowActionSheet] = useState(false)
+
+    const handleActions = async (e) => {
+        // console.log('点击操作:', e)
+        if (e.type === 1) {
+            console.log('AI 生成头像')
+            const text = `
+        昵称：${userinfo.nickname},
+        个性签名：${userinfo.slogan}
+        `
+            const newAvatar = await generateAvatar(text)
+        } else if (e.type === 2) {
+            console.log('本地修改头像')
+        }
+    }
+    const actions = [
+        {
+            name: 'AI 生成头像',
+            type: 1,
+            onClick: () => { console.log('AI 生成头像') }
+        },
+        {
+            name: '本地上传头像',
+            type: 2,
+            onClick: () => { console.log('本地修改头像') }
+        },
+    ]
 
     return (
         <div className={styles.container}>
@@ -36,6 +60,7 @@ const My = () => {
                             round
                             width={80}
                             height={80}
+                            onClick={() => setShowActionSheet(true)}
                         />
                     </div>
                     <div className={styles.userDetails}>
@@ -49,44 +74,51 @@ const My = () => {
                     </div>
                 </div>
             </Card>
+            <ActionSheet
+                visible={showActionSheet}
+                actions={actions}
+                cancelText='取消'
+                onCancel={() => setShowActionSheet(false)}
+                onSelect={(e) => handleActions(e)}
+            ></ActionSheet>
 
             {/* 功能宫格 */}
             <Card className={styles.gridCard}>
                 <div className={styles.gridTitle}>功能中心</div>
                 <Grid columnNum={4} border={false}>
-                    <Grid.Item 
-                        icon={<UserCircleO />} 
-                        text="个人资料" 
+                    <Grid.Item
+                        icon={<UserCircleO />}
+                        text="个人资料"
                         onClick={() => handleMenuClick('profile')}
                     />
-                    <Grid.Item 
-                        icon={<StarO />} 
-                        text="我的收藏" 
+                    <Grid.Item
+                        icon={<StarO />}
+                        text="我的收藏"
                         onClick={() => handleMenuClick('favorites')}
                     />
-                    <Grid.Item 
-                        icon={<EyeO />} 
-                        text="阅读历史" 
+                    <Grid.Item
+                        icon={<EyeO />}
+                        text="阅读历史"
                         onClick={() => handleMenuClick('history')}
                     />
-                    <Grid.Item 
-                        icon={<LikeO />} 
-                        text="我的点赞" 
+                    <Grid.Item
+                        icon={<LikeO />}
+                        text="我的点赞"
                         onClick={() => handleMenuClick('likes')}
                     />
-                    <Grid.Item 
-                        icon={<ServiceO />} 
-                        text="客服中心" 
+                    <Grid.Item
+                        icon={<ServiceO />}
+                        text="客服中心"
                         onClick={() => handleMenuClick('service')}
                     />
-                    <Grid.Item 
-                        icon={<FriendsO />} 
-                        text="好友动态" 
+                    <Grid.Item
+                        icon={<FriendsO />}
+                        text="好友动态"
                         onClick={() => handleMenuClick('friends')}
                     />
-                    <Grid.Item 
-                        icon={<SettingO />} 
-                        text="设置" 
+                    <Grid.Item
+                        icon={<SettingO />}
+                        text="设置"
                         onClick={() => handleMenuClick('settings')}
                     />
                 </Grid>

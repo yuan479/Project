@@ -14,6 +14,11 @@ const MODEL_CONFIG = {
         api_url: import.meta.env.VITE_MOONSHOT_CHAT_URL,
         api_key: import.meta.env.VITE_MOONSHOT_API_KEY,
         model: 'moonshot-v1-8k'
+    },
+    doubao_image:{
+        api_url:'https://ark.cn-beijing.volces.com/api/v3',
+        api_key:'bb1a84e9-4d48-4712-a4fd-914e433d6156',
+        model: 'doubaoseedream-3-0-t2i-250415'
     }
 }
 
@@ -52,6 +57,17 @@ const chat = async (messages, modelType = 'deepseek') => {
             msg: '(っ °Д °;)っ，AI好像出错了...',
         }
     }
+}
+
+export const generateAvatar = async (text) => {
+    const prompt = `
+    你是一个专业的头像设计师，根据用户提供的个人信息，生成一个符合用户需求的头像。
+    用户提供的个人信息：${text}
+    头像要求：
+    1. 头像风格：卡通风格
+    2. 头像尺寸：80x80
+    `
+  
 }
 
 // 导出函数
