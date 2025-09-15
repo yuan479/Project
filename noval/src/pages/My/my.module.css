@@ -7,7 +7,6 @@
 /* 用户信息卡片 */
 .userCard {
     margin-bottom: 16px;
-   
     overflow: hidden;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     height: 150px;
@@ -86,6 +85,17 @@
     color: #333;
     padding: 16px 16px 8px;
     margin: 0;
+    position: relative;
+}
+
+.gridTitle::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 16px;
+    right: 16px;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
 /* 响应式设计 */
