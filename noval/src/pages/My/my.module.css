@@ -1,0 +1,155 @@
+/* 主容器 */
+.container {
+    min-height: 100vh;
+    padding: 16px;
+}
+
+/* 用户信息卡片 */
+.userCard {
+    margin-bottom: 16px;
+   
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    height: 150px;
+}
+
+.userInfo {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 30px 20px;
+    min-height: 120px;
+}
+
+.avatarSection {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.avatar {
+    border: 3px solid #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.userDetails {
+    flex: 1;
+    min-width: 0;
+    padding: 5px 20px;
+}
+
+.nickname {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+    line-height: 1.2;
+}
+
+.slogan {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 16px;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.stats {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.statText {
+    font-size: 10px;
+    font-weight: 400;
+    color: #666;
+    line-height: 1.2;
+}
+
+
+/* 网格卡片 */
+.gridCard {
+    margin-bottom: 16px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.gridTitle {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    padding: 16px 16px 8px;
+    margin: 0;
+}
+
+/* 响应式设计 */
+@media (max-width: 480px) {
+    .container {
+        padding: 12px;
+    }
+    
+    .userInfo {
+        padding: 24px 16px;
+        gap: 12px;
+        min-height: 100px;
+    }
+    
+    .avatar {
+        width: 70px !important;
+        height: 70px !important;
+    }
+    
+    .nickname {
+        font-size: 18px;
+    }
+    
+    .slogan {
+        font-size: 13px;
+    }
+    
+    .stats {
+        gap: 12px;
+    }
+    
+    .statText {
+        font-size: 12px;
+    }
+}
+
+/* 自定义react-vant组件样式 */
+:global(.rv-cell) {
+    padding: 16px;
+}
+
+:global(.rv-cell__title) {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+:global(.rv-cell__icon) {
+    margin-right: 12px;
+}
+
+:global(.rv-grid-item__content) {
+    padding: 16px 8px;
+}
+
+:global(.rv-grid-item__text) {
+    font-size: 12px;
+    margin-top: 8px;
+}
+
+:global(.rv-card) {
+    border: none;
+    box-shadow: none;
+}
+
+:global(.rv-card__body) {
+    padding: 0;
+}
