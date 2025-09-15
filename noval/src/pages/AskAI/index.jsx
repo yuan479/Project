@@ -79,8 +79,8 @@ const AskAI = () => {
                 {messages.length === 0 ? (
                     <div className={styles.emptyState}>
                         <div className={styles.emptyStateIcon}>🤖</div>
-                        <div className={styles.emptyStateText}>你好！我是AI助手</div>
-                        <div className={styles.emptyStateSubtext}>有什么问题尽管问我吧～</div>
+                        <div className={styles.emptyStateText}>你好！我是你的AI助手</div>
+                        <div className={styles.emptyStateSubtext}>有什么想看的书尽管问我吧～</div>
                     </div>
                 ) : (
                     messages.map((message, index) => (
