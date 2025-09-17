@@ -15,11 +15,6 @@ const MODEL_CONFIG = {
         api_key: import.meta.env.VITE_MOONSHOT_API_KEY,
         model: 'moonshot-v1-8k'
     },
-    doubao_image:{
-        api_url:'https://ark.cn-beijing.volces.com/api/v3',
-        api_key:'bb1a84e9-4d48-4712-a4fd-914e433d6156',
-        model: 'doubaoseedream-3-0-t2i-250415'
-    }
 }
 
 // 通用聊天函数
