@@ -1,7 +1,7 @@
 import useTitle from '@/hooks/useTitle'
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import styles from './my.module.css'
-import { Image, Grid, Card, ActionSheet } from 'react-vant'
+import { Image, Grid, Card, ActionSheet, Toast } from 'react-vant'
 import { ServiceO, FriendsO, StarO, SettingO, UserCircleO, LikeO, EyeO } from '@react-vant/icons'
 import { generateAvatar } from '@/llm'
 
@@ -19,7 +19,97 @@ const My = () => {
     const handleMenuClick = (menu) => {
         console.log('点击菜单:', menu)
     }
+
+    // 图片压缩函数
+    const compressImage = (file, maxWidth = 200, quality = 0.8) => {
+        return new Promise((resolve) => {
+            const canvas = document.createElement('canvas')
+            const ctx = canvas.getContext('2d')
+            const img = document.createElement('img')
+            
+            img.onload = () => {
+                // 计算压缩后的尺寸
+                let { width, height } = img
+                if (width > maxWidth) {
+                    height = (height * maxWidth) / width
+                    width = maxWidth
+                }
+                
+                canvas.width = width
+                canvas.height = height
+                
+                // 绘制压缩后的图片
+                ctx.drawImage(img, 0, 0, width, height)
+                
+                // 转换为blob
+                canvas.toBlob(resolve, 'image/jpeg', quality)
+            }
+            
+            img.onerror = () => {
+                console.error('图片加载失败')
+                resolve(file) // 如果压缩失败，返回原文件
+            }
+            
+            img.src = URL.createObjectURL(file)
+        })
+    }
+
+    // 处理文件上传
+    const handleFileUpload = async (event) => {
+        const file = event.target.files[0]
+        if (!file) return
+
+        // 验证文件类型
+        if (!file.type.startsWith('image/')) {
+            Toast.fail('请选择图片文件')
+            return
+        }
+
+        // 验证文件大小 (5MB)
+        if (file.size > 5 * 1024 * 1024) {
+            Toast.fail('图片大小不能超过5MB')
+            return
+        }
+
+        try {
+            Toast.loading('正在处理图片...')
+            
+            // 压缩图片
+            const compressedFile = await compressImage(file)
+            
+            // 转换为base64
+            const reader = new FileReader()
+            reader.onload = (e) => {
+                const base64 = e.target.result
+                
+                // 更新用户头像
+                setUserinfo(prev => ({
+                    ...prev,
+                    avatar: base64
+                }))
+                
+                // 隐藏操作面板
+                setShowActionSheet(false)
+                
+                Toast.success('头像更新成功')
+            }
+            
+            reader.onerror = () => {
+                Toast.fail('图片读取失败，请重试')
+            }
+            
+            reader.readAsDataURL(compressedFile)
+            
+        } catch (error) {
+            console.error('图片处理失败:', error)
+            Toast.fail('图片处理失败，请重试')
+        } finally {
+            // 清空input值，允许重复选择同一文件
+            event.target.value = ''
+        }
+    }
     const [showActionSheet, setShowActionSheet] = useState(false)
+    const fileInputRef = useRef(null)
 
     const handleActions = async (e) => {
         // console.log('点击操作:', e)
@@ -32,6 +122,7 @@ const My = () => {
             const newAvatar = await generateAvatar(text)
         } else if (e.type === 2) {
             console.log('本地修改头像')
+            fileInputRef.current?.click()
         }
     }
     const actions = [
@@ -81,6 +172,15 @@ const My = () => {
                 onCancel={() => setShowActionSheet(false)}
                 onSelect={(e) => handleActions(e)}
             ></ActionSheet>
+
+            {/* 隐藏的文件输入 */}
+            <input
+                ref={fileInputRef}
+                type="file"
+                accept="image/*"
+                onChange={handleFileUpload}
+                style={{ display: 'none' }}
+            />
 
             {/* 功能宫格 */}
             <Card className={styles.gridCard}>
