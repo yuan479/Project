@@ -4,6 +4,10 @@ import { viteMockServe } from "vite-plugin-mock";
 import path from "path";
 
 // https://vite.dev/config/
+console.log("Vite 配置中读取的环境变量：", {
+  url: process.env.VITE_MOONSHOT_CHAT_URL,
+  key: process.env.VITE_MOONSHOT_API_KEY
+});
 export default defineConfig({
   plugins: [
     react(),
