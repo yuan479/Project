@@ -5,7 +5,7 @@ import { useComponentConfigStore } from '../../stores/component-config'
 export function EditorArea() {
     const {components,addComponent,deleteComponent} = useComponentsStore()
     const {componentConfig} = useComponentConfigStore()
-    useEffect(()=>{
+   /*  useEffect(()=>{
         addComponent({
             id:11,
             name:'Page',
@@ -24,7 +24,7 @@ export function EditorArea() {
             props:{},
             children:[]
         },12)
-        /* setTimeout(()=>{
+         setTimeout(()=>{
             deleteComponent(21)
         },3000)
         setTimeout(()=>{
@@ -32,8 +32,8 @@ export function EditorArea() {
         },6000)
         setTimeout(()=>{
             deleteComponent(11)
-        },9000) */
-    },[])
+        },9000) 
+    },[]) */
 
     function renderComponents(components:Component[]):React.ReactNode{
         return components.map((component:Component)=>{

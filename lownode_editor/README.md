@@ -9,6 +9,7 @@
   - pnpm i allotment  可调整大小的分栏布局
   - pnpm i zustand  状态管理
   - pnpm i --save-dev antd  实现拖拽的组件库
+  - pnpm i react-dnd react-dnd-html5-backend 拖拽功能
 
 *tailwindcss*
   - 官方文档：https://tailwindcss.com/docs/installation/using-vite
@@ -25,3 +26,4 @@
   - Botton
   - Page
 
+*拖拽功能*
